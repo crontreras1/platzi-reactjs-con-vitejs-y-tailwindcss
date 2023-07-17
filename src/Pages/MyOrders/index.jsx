@@ -1,8 +1,10 @@
+import Layout from "../../Components/Layout";
+
 function MyOrders () {
     return (
-        <div className="bg-cyan-700">
+        <Layout>
             MyOrders
-        </div>
+        </Layout>
     );
 };
 

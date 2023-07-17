@@ -1,8 +1,10 @@
+import Layout from "../../Components/Layout";
+
 function NotFound () {
     return (
-        <div className="bg-cyan-700">
+        <Layout>
             Not Found
-        </div>
+        </Layout>
     );
 };
 

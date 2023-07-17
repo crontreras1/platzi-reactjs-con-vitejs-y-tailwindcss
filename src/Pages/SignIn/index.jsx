@@ -1,8 +1,10 @@
+import Layout from "../../Components/Layout";
+
 function SignIn () {
     return (
-        <div className="bg-cyan-700">
+        <Layout>
             Sign In
-        </div>
+        </Layout>
     );
 };
 
