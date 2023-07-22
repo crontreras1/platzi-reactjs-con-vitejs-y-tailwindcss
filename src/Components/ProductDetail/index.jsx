@@ -5,7 +5,6 @@ import './styles.css';
 
 function ProductDetail () {
     const context = useContext(ShoppingCartContext);
-    console.log('product to show', context.productToShow);
 
     return (
         <aside
@@ -24,7 +23,7 @@ function ProductDetail () {
             <figure className='px-6'>
                 <img 
                     className='w-full h-full rounded-lg'
-                    src={ context.productToShow.images[0] } 
+                    src={ context.productToShow.images } 
                     alt={ context.productToShow.title } 
                 />
             </figure>
