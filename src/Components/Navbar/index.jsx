@@ -15,7 +15,7 @@ function Navbar () {
                     <NavLink 
                         to='/'
                     >
-                        Shopi
+                        Shoppi
                     </NavLink>
                 </li>
 
@@ -134,4 +134,4 @@ function Navbar () {
     );
 };
 
-export { Navbar };
+export default Navbar;
