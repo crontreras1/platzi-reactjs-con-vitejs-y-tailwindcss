@@ -88,7 +88,7 @@ function Navbar () {
 
             <ul className="flex items-center gap-5">
                 <li className="text-black/60">
-                    example@shopi.com
+                    example@shoppi.com
                 </li>
 
                 <li>

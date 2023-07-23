@@ -6,7 +6,11 @@ import './styles.css';
 
 function CheckoutSideMenu () {
     const context = useContext(ShoppingCartContext);
-    console.log('Cart:', context.cartProducts);
+
+    const handleDelete = (id) => {
+        const filteredProducts = context.cartProducts.filter(product => product.id !== id)
+        context.setCartProducts(filteredProducts)
+    };
 
     return (
         <aside
@@ -28,9 +32,11 @@ function CheckoutSideMenu () {
                     context.cartProducts.map(product => (
                         <OrderCard 
                             key={ product.id }
+                            id={ product.id }
                             title={ product.title }
                             images={ product.images }
                             price={ product.price }
+                            handleDelete={ handleDelete }
                         />
                     ))
                 }
