@@ -1,6 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
-const ShoppingCartContext = createContext();
+const ShoppingCartContext = createContext(); 
 
 const ShoppingCartProvider = ({ children }) => {
     // Cart Icon - Increment cuantity
@@ -24,7 +24,19 @@ const ShoppingCartProvider = ({ children }) => {
     
     // Shopping cart - Order
     const [order, setOrder] = useState([]);
+
+    // Get products
+    const [items, setItems] = useState(null);
+
+    // Get products by title
+    const [searchByTitle, setSearchByTitle] = useState('');
     
+    useEffect(() => {
+        fetch('https://api.escuelajs.co/api/v1/products')
+            .then(response => response.json())
+            .then(data => setItems(data))
+    }, []);
+
     return (
         <ShoppingCartContext.Provider value={{
             count,
@@ -40,7 +52,11 @@ const ShoppingCartProvider = ({ children }) => {
             openCheckoutSideMenu,
             closeCheckoutSideMenu,
             order,
-            setOrder
+            setOrder, 
+            items,
+            setItems,
+            searchByTitle,
+            setSearchByTitle
         }}>
             { children }
         </ShoppingCartContext.Provider>
