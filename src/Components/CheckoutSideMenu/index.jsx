@@ -17,7 +17,7 @@ function CheckoutSideMenu () {
 
     const handleCheckout = () => {
         var orderToAdd = {
-            daet: '01.02.23',
+            date: '01.02.23',
             product: context.cartProducts,
             totalProducts: context.cartProducts.legth,
             totalPrice: totalPrice(context.cartProducts)
@@ -27,6 +27,7 @@ function CheckoutSideMenu () {
         context.setCartProducts([]);
         context.setCount(0);
         context.closeCheckoutSideMenu();
+        context.setSearchByTitle(null);
     };
 
     return (
